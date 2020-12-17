@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 //                        2. AnimationController - specify parameters of animation like duration. Also animController starts and ends we animation.
 //                        3. You must initialize animation and animController in initialState. To specify vsync parameters you need add mixin SingleTickerProviderStateMixin
 //                        4. Don't forget to dispose controllers
+//                        5. It's important to add Listeners to your animation (if you want to use reverse, also you need to add statusListener
 
 void main() {
   runApp(MyApp());
@@ -77,7 +78,7 @@ class AnimationPage extends State<MyHomePage>
         title: Text(widget.title),
       ),
       body: Transform.rotate(
-        angle: animation.value,
+        angle:  animation.value,
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(30),
